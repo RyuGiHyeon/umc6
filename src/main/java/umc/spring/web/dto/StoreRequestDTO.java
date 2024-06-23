@@ -15,5 +15,4 @@ public class StoreRequestDTO {
         @NotBlank
         String title;
     }
-
 }
