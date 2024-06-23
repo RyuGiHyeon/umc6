@@ -36,6 +36,8 @@ public class MemberCommandServiceImpl implements MemberCommandService {
                     return foodCategoryRepository.findById(category).orElseThrow(() -> new FoodCategoryHandler(ErrorStatus.FOOD_CATEGORY_NOT_FOUND));
                 }).collect(Collectors.toList());
 
+
+        // MemberPrefer 관련 설정
         List<MemberPrefer> memberPreferList = MemberPreferConverter.toMemberPreferList(foodCategoryList);
 
         memberPreferList.forEach(memberPrefer -> {memberPrefer.setMember(newMember);});
